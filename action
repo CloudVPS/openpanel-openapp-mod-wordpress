@@ -1,0 +1,23 @@
+#!/bin/bash
+. /var/openpanel/api/sh/module.sh
+
+WordpressAdmin.update() {
+  appid=wordpress
+  newpass=$(coreval WordpressAdmin password)
+  authd runscript openapp-passwd "$appid" "$newpass"
+}
+
+Module.getconfig() {
+  cat << _EOF_
+  <openpanel.module>
+    <dict id="WordpressAdmin" type="class">
+      <dict id="Admin">
+	    <string id="password">*</string>
+      </dict>
+    </dict>
+  </openpanel.module>
+_EOF_
+  exitquiet
+}
+
+implement OpenAppWordpress.module

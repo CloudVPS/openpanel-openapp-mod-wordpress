@@ -1,0 +1,23 @@
+TODO: fix icons
+
+To reuse this code for a different OpenApp package
+==================================================
+
+1. edit module.def:
+  a. search/replace Joomla with new app name
+  b. generate two fresh UUIDs (and stick them in the right spots)
+  c. update shortname/title/description to make sense
+2. edit action:
+  a. change appid= line to match /usr/bin/openapp-X-passwd
+  b. change getconfig class line to match classname in module.def
+3. change debian/changelog:
+  a. change package name, perhaps update date
+4. change debian/control:
+  a. replace 'joomla' and 'Joomla' with new app name
+5. change debian/postinst:
+  a. replace 'Joomla' with new app name
+6. change debian/rules:
+  a. replace 'Joomla' with new app name
+7. Change icon (to be fixed and described). 
+  
+That should be all!

@@ -1,0 +1,13 @@
+Source: openpanel-openapp-mod-wordpress
+Section: misc
+Priority: optional
+Maintainer: OpenPanel packager <packages@openpanel.com>
+Build-Depends: debhelper (>= 5), openpanel-dev
+Standards-Version: 3.7.2
+
+Package: openpanel-openapp-mod-wordpress
+Architecture: any
+Pre-Depends: openpanel-core, openpanel-authd
+Depends: openapp-wordpress, openpanel-openapp-mod-user, openpanel-core, openpanel-api-sh, openpanel-openapp-passwd, ${shlibs:Depends}, ${misc:Depends}
+Description: OpenPanel module to manage OpenApp Wordpress
+  manage the OpenApp Wordpress
