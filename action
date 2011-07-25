@@ -4,7 +4,8 @@
 WordpressAdmin.update() {
   appid=wordpress
   newpass=$(coreval WordpressAdmin password)
-  authd runscript openapp-call "$appid" passwd "$newpass"
+  MD5_PWD=$(echo -n ${newpass} | md5sum | cut -f 1 -d ' ')
+  authd runscript openapp-call "$appid" passwd "MD5|$MD5_PWD"
 }
 
 Module.getconfig() {
