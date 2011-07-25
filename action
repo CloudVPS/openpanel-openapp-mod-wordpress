@@ -4,7 +4,7 @@
 WordpressAdmin.update() {
   appid=wordpress
   newpass=$(coreval WordpressAdmin password)
-  authd runscript openapp-passwd "$appid" "$newpass"
+  authd runscript openapp-call "$appid" passwd "$newpass"
 }
 
 Module.getconfig() {

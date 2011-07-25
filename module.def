@@ -50,4 +50,4 @@ class WordpressAdmin			< uuid 028d519f-2915-48ed-a11a-c2052647df79
 # AUTHD
 # ============================================================================
 authd scripts
-	script	openapp-passwd
+	script	openapp-call
