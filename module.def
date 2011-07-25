@@ -46,6 +46,11 @@ class WordpressAdmin			< uuid 028d519f-2915-48ed-a11a-c2052647df79
 								< example sPswd13t
 								< regexp [:password:]
 
+	string site_url				: Site URL
+								< textwidth 40
+								< examble http://example.com
+								< regexp [:url:]
+
 # ============================================================================
 # AUTHD
 # ============================================================================

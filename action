@@ -6,6 +6,9 @@ WordpressAdmin.update() {
   newpass=$(coreval WordpressAdmin password)
   MD5_PWD=$(echo -n ${newpass} | md5sum | cut -f 1 -d ' ')
   authd runscript openapp-call "$appid" passwd "MD5|$MD5_PWD"
+
+  siteurl=$(coreval WordpressAdmin site_url)
+  authd runscript openapp-call "$appid" siteurl "$siteurl"
 }
 
 Module.getconfig() {
