@@ -14,15 +14,12 @@ WordpressAdmin.update() {
 }
 
 Module.getconfig() {
-  appid=wordpress
-  SITEURL=$(authd runscript openapp-call "$appid" siteurl)
 
   cat << _EOF_
   <openpanel.module>
     <dict id="WordpressAdmin" type="class">
       <dict id="Admin">
 	    <string id="password">*</string>
-	    <string id="site_url">${SITEURL}</string>
       </dict>
     </dict>
   </openpanel.module>
