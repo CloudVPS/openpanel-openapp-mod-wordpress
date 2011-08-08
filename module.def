@@ -15,6 +15,7 @@ module OpenAppWordpress			< uuid 7106f11e-8881-49fd-9c48-0e43a097b93c
 								< languages en_EN
 								< apitype commandline
 								< getconfig true
+                                < dynamic true
 								< license GPLv3
 								< author OpenPanel
 								< url http://www.openpanel.com/
