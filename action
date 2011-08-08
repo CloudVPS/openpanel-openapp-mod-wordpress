@@ -13,7 +13,7 @@ WordpressAdmin.update() {
   [ -z ${siteurl} ] || authd runscript openapp-call "$appid" siteurl "$siteurl"
 }
 
-Module.getconfig() {
+Module.listobjects() {
   appid=wordpress
   SITEURL=$(authd runscript openapp-call "$appid" siteurl)
 
