@@ -28,8 +28,8 @@ class WordpressAdmin			< uuid 028d519f-2915-48ed-a11a-c2052647df79
 								< uniquein class
 								< shortname wordpressadmin
 								< singleton Admin
-								< title Wordpress admin
-								< description Wordpress admin password
+								< title Wordpress
+								< description Wordpress settings
 								< sortindex 10
 								< icon user.png
 							
