@@ -51,8 +51,61 @@ class WordpressAdmin			< uuid 028d519f-2915-48ed-a11a-c2052647df79
 								< example http://example.com
 								< regexp [:url:]
 
+# ----------------------------------------------------------------------------
+class HTTPS						< uuid 730045e0-d36a-4f67-860d-ef4b13995677
+								< version 1
+								< requires WordpressAdmin
+								< indexing manual
+								< uniquein parent
+								< singleton https
+								< shortname https
+								< title HTTPS Settings
+								< description Enable HTTPS on your Wordpress install
+                                < required pem
+								
+								< capabilities create update delete
+								
+	textarea pem				: Certificate for HTTPS
+								< textwidth 48
+								< rows 12
+
+	string ip					: IP address
+								< example 10.20.30.40
+								< flags enabled visible
+								< gridwidth 38
+								< textwidth 18
+								
 # ============================================================================
 # AUTHD
 # ============================================================================
 authd scripts
 	script	openapp-call
+# ----------------------------------------------------------------------------
+authd fileops
+	match *.conf				: /etc/apache2/sites-enabled
+								< user root
+								< group root
+								< perms 0644
+
+	match **.conf				: /etc/apache2/conf.d
+								< user root
+								< group root
+								< perms 0644
+
+	match *						: /etc/ssl/private
+								< user root
+								< group ssl-cert
+								< perms 0750
+
+	match wordpress.pem			: /etc/ssl/private
+								< user root
+								< group root
+								< perms 0600
+
+	match *						: /var/www/*
+								< user www-data
+								< group www-data
+								< perms 0755
+# ----------------------------------------------------------------------------
+authd services
+	service apache2
