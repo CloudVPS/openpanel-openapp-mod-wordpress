@@ -7,6 +7,8 @@ A2CONFDIR=/etc/apache2/sites-enabled
 WordpressAdmin.update() {
   appid=wordpress
   newpass=$(coreval WordpressAdmin password)
+  awstats=$(coreval WordpressAdmin awstatspass)
+  [ -z "${awstats}" ] || authd runscript openapp-call "awstats" passwd "${awstats}"
   if [ ! -z ${newpass} ]; then
     MD5_PWD=$(echo -n ${newpass} | md5sum | cut -f 1 -d ' ')
     authd runscript openapp-call "$appid" passwd "MD5|$MD5_PWD"
