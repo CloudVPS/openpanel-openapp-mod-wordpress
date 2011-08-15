@@ -51,9 +51,6 @@ HTTPS.delete() {
 
 HTTPS.create() {
 	SSLCERT=$(coreval HTTPS pem)
-	SSLIP=$(coreval HTTPS ip)
-
-[ -z ${SSLIP} ] && SSLIP="*"
 
 cat <<EOB > $(pwd)/wordpress.pem
 ${SSLCERT}
@@ -64,7 +61,7 @@ EOB
 [ $? -eq 0 ] || exiterror "Your certificate has issues. Is the private key included (and without a passphrase)?"
 
 cat <<EOB > $(pwd)/default-ssl.conf
-<VirtualHost ${SSLIP}:443>
+<VirtualHost *:443>
 	DocumentRoot /var/www
 
 	SSLEngine on
