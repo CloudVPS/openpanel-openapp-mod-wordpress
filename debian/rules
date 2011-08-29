@@ -19,6 +19,7 @@ install:
 	install -m 755 action ${BUILD_ROOT}/var/openpanel/modules/OpenAppWordpress.module/action
 	cp module.xml ${BUILD_ROOT}/var/openpanel/modules/OpenAppWordpress.module/module.xml
 	cp *.png ${BUILD_ROOT}/var/openpanel/modules/OpenAppWordpress.module/
+	cp wordpress.html ${BUILD_ROOT}/var/openpanel/modules/OpenAppWordpress.module/
 	mv ${BUILD_ROOT}/var/openpanel/modules/OpenAppWordpress.module/logo.png ${BUILD_ROOT}/var/openpanel/http/images/OpenPanelLogo.png
 	cp wallpaper.jpg ${BUILD_ROOT}/var/openpanel/wallpaper/default.jpg
 	install -m 755 verify ${BUILD_ROOT}/var/openpanel/modules/OpenAppWordpress.module/verify
